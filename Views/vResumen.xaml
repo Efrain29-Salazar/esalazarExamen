@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="esalazarExamen.Views.vResumen"
+             Title="Resumen"
+             NavigationPage.HasBackButton="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label x:Name="lblUsuario"
+                   Text="Usuario conectado: "
+                   Style="{StaticResource UsuarioConectadoStyle}" />
+
+            <Label Text="RESUMEN"
+                   Style="{StaticResource TituloResumenStyle}" />
+
+            <!-- GRID: 9 filas x 2 columnas -->
+            <Grid RowSpacing="8" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblNombre" Grid.Row="0" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Apellido" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblApellido" Grid.Row="1" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Edad" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblEdad" Grid.Row="2" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Fecha de inicio" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblFecha" Grid.Row="3" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Plan" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblPlan" Grid.Row="4" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Casillero" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblCasillero" Grid.Row="5" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Monto inicial" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblMonto" Grid.Row="6" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="7" Grid.Column="0" Text="Pago mensual" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblPagoMensual" Grid.Row="7" Grid.Column="1" Text="-" VerticalOptions="Center" />
+
+                <Label Grid.Row="8" Grid.Column="0" Text="Pago total" Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label x:Name="lblPagoTotal" Grid.Row="8" Grid.Column="1" Text="-" VerticalOptions="Center" />
+            </Grid>
+
+            <Button x:Name="btnExportar"
+                    Text="Exportar a TXT"
+                    Style="{StaticResource BotonPrincipalStyle}"
+                    Margin="0,10,0,0"
+                    Clicked="btnExportar_Clicked" />
+
+            <Button x:Name="btnNuevo"
+                    Text="Nuevo registro"
+                    Style="{StaticResource BotonPrincipalStyle}"
+                    Clicked="btnNuevo_Clicked" />
+
+            <Button x:Name="btnCerrar"
+                    Text="Cerrar sesión"
+                    Style="{StaticResource BotonSecundarioStyle}"
+                    Clicked="btnCerrar_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

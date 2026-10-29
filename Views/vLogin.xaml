@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="esalazarExamen.Views.vLogin"
+             Title="Login">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label Text="GIMNASIO - REGISTRO DE SOCIOS"
+                   Style="{StaticResource TituloLoginStyle}" />
+
+            <!-- Logo local (Resources/Images/logo.png) -->
+            <Image Source="logo.png"
+                   HeightRequest="130"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <!-- GRID: 3 filas x 2 columnas -->
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Usuario"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Entry x:Name="txtUsuario" Grid.Row="0" Grid.Column="1"
+                       Placeholder="Ingrese su usuario" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Contraseña"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Entry x:Name="txtClave" Grid.Row="1" Grid.Column="1"
+                       Placeholder="Ingrese su contraseña"
+                       IsPassword="True" />
+
+                <Button x:Name="btnIniciar" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="Iniciar sesión"
+                        Style="{StaticResource BotonPrincipalStyle}"
+                        Clicked="btnIniciar_Clicked" />
+            </Grid>
+
+            <Button x:Name="btnAcerca"
+                    Text="Acerca de"
+                    Style="{StaticResource BotonSecundarioStyle}"
+                    Clicked="btnAcerca_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

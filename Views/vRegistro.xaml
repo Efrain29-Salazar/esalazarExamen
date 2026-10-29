@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="esalazarExamen.Views.vRegistro"
+             Title="Registro"
+             NavigationPage.HasBackButton="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label x:Name="lblUsuario"
+                   Text="Usuario conectado: "
+                   Style="{StaticResource UsuarioConectadoStyle}" />
+
+            <Label Text="REGISTRO"
+                   Style="{StaticResource TituloRegistroStyle}" />
+
+            <!-- GRID 1: 2 filas x 3 columnas -->
+            <Grid RowSpacing="5" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Apellido"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Edad"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+
+                <Entry x:Name="txtNombre" Grid.Row="1" Grid.Column="0"
+                       Placeholder="Nombre" />
+                <Entry x:Name="txtApellido" Grid.Row="1" Grid.Column="1"
+                       Placeholder="Apellido" />
+                <Entry x:Name="txtEdad" Grid.Row="1" Grid.Column="2"
+                       Placeholder="Edad"
+                       Keyboard="Numeric"
+                       MaxLength="3"
+                       TextChanged="txtEdad_TextChanged" />
+            </Grid>
+
+            <!-- GRID 2: 5 filas x 2 columnas -->
+            <Grid RowSpacing="10" ColumnSpacing="10" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Fecha de inicio"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <DatePicker x:Name="dtpFecha" Grid.Row="0" Grid.Column="1"
+                            Format="dd/MM/yyyy" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Plan"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Picker x:Name="pkPlan" Grid.Row="1" Grid.Column="1"
+                        Title="Seleccione un plan">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Musculación</x:String>
+                            <x:String>Cardio</x:String>
+                            <x:String>Crossfit</x:String>
+                            <x:String>Full</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Casillero"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Switch x:Name="swCasillero" Grid.Row="2" Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Toggled="swCasillero_Toggled" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Monto inicial"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Entry x:Name="txtMonto" Grid.Row="3" Grid.Column="1"
+                       Placeholder="Entre 120 y 600"
+                       Keyboard="Numeric"
+                       TextChanged="txtMonto_TextChanged" />
+
+                <Button x:Name="btnCalcular" Grid.Row="4" Grid.Column="0"
+                        Text="Calcular Pago mensual"
+                        Style="{StaticResource BotonPrincipalStyle}"
+                        Clicked="btnCalcular_Clicked" />
+                <Entry x:Name="txtPagoMensual" Grid.Row="4" Grid.Column="1"
+                       Placeholder="Pago mensual"
+                       IsReadOnly="True" />
+            </Grid>
+
+            <!-- Fuera del GRID -->
+            <Button x:Name="btnResumen"
+                    Text="Ver Resumen"
+                    Style="{StaticResource BotonPrincipalStyle}"
+                    Margin="0,10,0,0"
+                    Clicked="btnResumen_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

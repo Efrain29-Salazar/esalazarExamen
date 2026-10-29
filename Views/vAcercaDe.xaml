@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="esalazarExamen.Views.vAcercaDe"
+             Title="Acerca de">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label Text="ACERCA DE"
+                   Style="{StaticResource TituloLoginStyle}" />
+
+            <!-- Foto local (Resources/Images/foto.png) -->
+            <Image Source="foto.png"
+                   HeightRequest="180"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <!-- COMPLETAR con tus datos -->
+            <Label Text="Nombre: [Escribe aquí tu nombre y apellido]"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+            <Label Text="Carrera: [Escribe aquí tu carrera]"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+            <Label Text="Paralelo: [Escribe aquí tu paralelo]"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+
+            <Button x:Name="btnVolver"
+                    Text="Volver"
+                    Style="{StaticResource BotonSecundarioStyle}"
+                    Clicked="btnVolver_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
